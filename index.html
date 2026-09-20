@@ -2,326 +2,297 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Ahmad Ihab Fouad | Software Engineering Student</title>
 
-    <meta name="description"
-          content="Portfolio of Ahmad Ihab Fouad, a Software Engineering student at MSA University and University of Greenwich.">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    <meta
+        name="description"
+        content="Portfolio of Ahmad Ihab Fouad, Software Engineering student at MSA University."
+    >
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
-    <!-- CSS -->
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- ==================== NAVBAR ==================== -->
 
-    <header class="header">
+    <header class="navbar">
 
-        <nav class="navbar">
+        <div class="container nav-container">
 
             <a href="#home" class="logo">
-                Ahmad Ihab
+                Ahmad<span>.</span>
             </a>
 
-            <button class="menu-toggle" id="menu-toggle">
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+            >
                 <i class="fas fa-bars"></i>
             </button>
 
-            <ul class="nav-links" id="nav-links">
+            <nav class="nav-menu" id="nav-menu">
 
-                <li>
-                    <a href="#home">Home</a>
-                </li>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
 
-                <li>
-                    <a href="#about">About</a>
-                </li>
+            </nav>
 
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
-
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-
-                <li>
-                    <a href="#experience">Experience</a>
-                </li>
-
-                <li>
-                    <a href="#education">Education</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-
-            </ul>
-
-        </nav>
+        </div>
 
     </header>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- ==================== HERO ==================== -->
 
-    <section class="hero" id="home">
+    <main>
 
-        <div class="hero-content">
+        <section id="home" class="hero">
 
-            <p class="hero-small-text">
-                Hello, I'm
-            </p>
+            <div class="container hero-container">
 
-            <h1>
-                Ahmad Ihab Fouad
-            </h1>
+                <div class="hero-content">
 
-            <h2>
-                Software Engineering Student
-            </h2>
-
-            <p class="hero-description">
-                A Computer Science student passionate about software
-                development, backend systems, databases, and
-                intelligent applications.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="btn primary-btn">
-                    View My Projects
-                </a>
-
-                <a href="#contact" class="btn secondary-btn">
-                    Contact Me
-                </a>
-
-            </div>
-
-            <div class="social-links">
-
-                <a href="https://github.com/ahmedihab001"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="GitHub">
-
-                    <i class="fab fa-github"></i>
-
-                </a>
-
-                <a href="https://www.linkedin.com/in/ahmad-ihab-fouad-abdullrahman-soliman-bb9261372"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   aria-label="LinkedIn">
-
-                    <i class="fab fa-linkedin"></i>
-
-                </a>
-
-                <a href="mailto:ahmad.ihab@msa.edu.eg"
-                   aria-label="Email">
-
-                    <i class="fas fa-envelope"></i>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section class="section" id="about">
-
-        <div class="section-container">
-
-            <div class="section-heading">
-
-                <span>01</span>
-
-                <h2>About Me</h2>
-
-            </div>
-
-            <div class="about-content">
-
-                <div class="about-text">
-
-                    <p>
-                        I am Ahmad Ihab Fouad, a Software Engineering
-                        student at MSA University, Faculty of Computer
-                        Science, with an expected graduation in 2027.
+                    <p class="hero-small-title">
+                        SOFTWARE ENGINEERING STUDENT
                     </p>
 
-                    <p>
-                        I am interested in software development,
-                        backend development, databases, web
-                        applications, and machine learning.
+                    <h1>
+                        Hi, I'm
+                        <span>Ahmad Ihab Fouad</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Software Engineering student passionate about
+                        software development, backend systems, databases,
+                        and building practical applications.
                     </p>
 
-                    <p>
-                        I enjoy building practical projects and
-                        continuously improving my programming and
-                        problem-solving skills through university
-                        projects and personal development.
-                    </p>
+                    <div class="hero-buttons">
 
-                    <p>
-                        I am currently looking for internship
-                        opportunities where I can gain practical
-                        experience and contribute to real-world
-                        software projects.
-                    </p>
+                        <a href="#projects" class="btn btn-primary">
+                            View My Projects
+                        </a>
 
-                </div>
+                        <a href="#contact" class="btn btn-secondary">
+                            Contact Me
+                        </a>
 
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section class="section dark-section" id="skills">
-
-        <div class="section-container">
-
-            <div class="section-heading">
-
-                <span>02</span>
-
-                <h2>Technical Skills</h2>
-
-            </div>
-
-            <div class="skills-grid">
-
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>C++</h3>
-                </div>
-
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>C#</h3>
-                </div>
-
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>SQL</h3>
-                </div>
-
-                <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>MySQL</h3>
-                </div>
-
-                <div class="skill-card">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML</h3>
-                </div>
-
-                <div class="skill-card">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS</h3>
-                </div>
-
-                <div class="skill-card">
-                    <i class="fab fa-js"></i>
-                    <h3>JavaScript</h3>
-                </div>
-
-                <div class="skill-card">
-                    <i class="fab fa-java"></i>
-                    <h3>Java</h3>
-                </div>
-
-                <div class="skill-card">
-                    <i class="fas fa-server"></i>
-                    <h3>Backend Development</h3>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section class="section" id="projects">
-
-        <div class="section-container">
-
-            <div class="section-heading">
-
-                <span>03</span>
-
-                <h2>Projects</h2>
-
-            </div>
-
-
-            <div class="projects-grid">
-
-
-                <!-- PROJECT 1 -->
-
-                <div class="project-card">
-
-                    <div class="project-icon">
-                        <i class="fas fa-shield-halved"></i>
                     </div>
 
-                    <div class="project-content">
+                    <div class="social-links">
 
-                        <span class="project-number">
-                            01
-                        </span>
+                        <a
+                            href="https://github.com/ahmedihab001"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                        >
+                            <i class="fab fa-github"></i>
+                        </a>
 
-                        <span class="project-status">
-                            <i class="fas fa-spinner"></i>
+                        <a
+                            href="https://www.linkedin.com/in/ahmad-ihab-fouad-abdullrahman-soliman-bb9261372"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                        <a
+                            href="mailto:ahmad.ihab@msa.edu.eg"
+                            aria-label="Email"
+                        >
+                            <i class="fas fa-envelope"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== ABOUT ==================== -->
+
+        <section id="about" class="section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>01</span>
+
+                    <h2>About Me</h2>
+
+                </div>
+
+                <div class="about-content">
+
+                    <p>
+                        I am a Software Engineering student at MSA University
+                        with an expected graduation in 2027. I am interested
+                        in software development, backend development,
+                        databases, and building real-world applications.
+                    </p>
+
+                    <p>
+                        I enjoy working on university projects and personal
+                        projects that allow me to improve my programming,
+                        problem-solving, database, and software engineering
+                        skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== SKILLS ==================== -->
+
+        <section id="skills" class="section section-dark">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>02</span>
+
+                    <h2>Technical Skills</h2>
+
+                </div>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <i class="fas fa-code"></i>
+                        <h3>C++</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fas fa-code"></i>
+                        <h3>C#</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>SQL</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>MySQL</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fab fa-java"></i>
+                        <h3>Java</h3>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="fas fa-server"></i>
+                        <h3>Backend Development</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== PROJECTS ==================== -->
+
+        <section id="projects" class="section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>03</span>
+
+                    <h2>Projects</h2>
+
+                </div>
+
+                <p class="section-description">
+                    Some of my current and completed projects. Projects
+                    hosted on GitHub are automatically loaded below.
+                </p>
+
+
+                <!-- MANUAL PROJECTS -->
+
+                <div class="projects-grid">
+
+
+                    <!-- Compound Security System -->
+
+                    <article class="project-card">
+
+                        <div class="project-icon">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+
+                        <h3>Compound Security System</h3>
+
+                        <div class="project-status">
+                            <i class="fas fa-circle"></i>
                             Currently in Development
-                        </span>
-
-                        <h3>
-                            Compound Security System
-                        </h3>
+                        </div>
 
                         <p>
-                            A security management system currently
-                            under development for residential
-                            compounds.
+                            A security management system designed for
+                            residential compounds, supporting residents,
+                            guards, delivery personnel, guests, and other
+                            users.
                         </p>
 
-                        <p>
-                            The system is designed to support
-                            residents, security guards, delivery
-                            personnel, guests, and other users.
-                        </p>
-
-                        <div class="technology-list">
+                        <div class="project-tags">
 
                             <span>TypeScript</span>
                             <span>Node.js</span>
@@ -330,53 +301,34 @@
 
                         </div>
 
-                    </div>
-
-                </div>
+                    </article>
 
 
-                <!-- PROJECT 2 -->
+                    <!-- Dental Fluorosis -->
 
-                <div class="project-card">
+                    <article class="project-card">
 
-                    <div class="project-icon">
-                        <i class="fas fa-tooth"></i>
-                    </div>
-
-                    <div class="project-content">
-
-                        <span class="project-number">
-                            02
-                        </span>
-
-                        <span class="project-status">
-                            <i class="fas fa-spinner"></i>
-                            Currently in Development
-                        </span>
+                        <div class="project-icon">
+                            <i class="fas fa-tooth"></i>
+                        </div>
 
                         <h3>
                             Dental Fluorosis Prediction System
                         </h3>
 
-                        <p>
-                            My graduation project focuses on
-                            developing an intelligent system that
-                            can help assess the possibility of
-                            dental fluorosis using dental images
-                            and information related to drinking
-                            water.
-                        </p>
+                        <div class="project-status">
+                            <i class="fas fa-circle"></i>
+                            Currently in Development
+                        </div>
 
                         <p>
-                            The system is planned to analyze dental
-                            images using an AI model and combine
-                            this with information such as living
-                            area, water source, well-water use,
-                            filtration, and available water
-                            analysis data.
+                            A graduation project focused on developing an
+                            AI-based system that analyzes dental images and
+                            water-related information to help predict the
+                            possibility of dental fluorosis.
                         </p>
 
-                        <div class="technology-list">
+                        <div class="project-tags">
 
                             <span>Python</span>
                             <span>Machine Learning</span>
@@ -386,195 +338,63 @@
 
                         </div>
 
-                    </div>
-
-                </div>
+                    </article>
 
 
-                <!-- PROJECT 3 -->
+                    <!-- Cipher Wheel -->
 
-                <div class="project-card">
+                    <article class="project-card">
 
-                    <div class="project-icon">
-                        <i class="fas fa-hotel"></i>
-                    </div>
-
-                    <div class="project-content">
-
-                        <span class="project-number">
-                            03
-                        </span>
-
-                        <h3>
-                            Nexes Hotel Website
-                        </h3>
-
-                        <p>
-                            A university team project for a hotel
-                            website. The system includes users,
-                            rooms, bookings, payments, administrators,
-                            and database functionality.
-                        </p>
-
-                        <div class="technology-list">
-
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>SQL</span>
-                            <span>Database</span>
-
+                        <div class="project-icon">
+                            <i class="fas fa-key"></i>
                         </div>
 
-                        <a href="https://github.com/ahmedihab001/nexes-hotel-website"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="project-link">
-
-                            <i class="fab fa-github"></i>
-                            View on GitHub
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 4 -->
-
-                <div class="project-card">
-
-                    <div class="project-icon">
-                        <i class="fas fa-horse"></i>
-                    </div>
-
-                    <div class="project-content">
-
-                        <span class="project-number">
-                            04
-                        </span>
-
-                        <h3>
-                            Pegasus Club
-                        </h3>
+                        <h3>Cipher Wheel Decoder</h3>
 
                         <p>
-                            A full-stack web application with
-                            separate frontend and backend components.
-                            The project is available on GitHub and
-                            is currently being developed.
+                            A digital cipher wheel decoder developed as a
+                            Windows Forms application using C#.
                         </p>
 
-                        <div class="technology-list">
-
-                            <span>Frontend</span>
-                            <span>Backend</span>
-                            <span>Web Development</span>
-
-                        </div>
-
-                        <a href="https://github.com/ahmedihab001/Pegasus-club"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="project-link">
-
-                            <i class="fab fa-github"></i>
-                            View on GitHub
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PROJECT 5 -->
-
-                <div class="project-card">
-
-                    <div class="project-icon">
-                        <i class="fas fa-key"></i>
-                    </div>
-
-                    <div class="project-content">
-
-                        <span class="project-number">
-                            05
-                        </span>
-
-                        <h3>
-                            Cipher Wheel Decoder
-                        </h3>
-
-                        <p>
-                            A digital cipher wheel decoder developed
-                            as a university team project using C#
-                            and Windows Forms.
-                        </p>
-
-                        <div class="technology-list">
+                        <div class="project-tags">
 
                             <span>C#</span>
                             <span>Windows Forms</span>
 
                         </div>
 
-                    </div>
+                    </article>
 
                 </div>
 
 
-            </div>
+                <!-- GITHUB PROJECTS -->
 
-        </div>
+                <div class="github-projects-heading">
 
-    </section>
+                    <h3>
+                        <i class="fab fa-github"></i>
+                        GitHub Projects
+                    </h3>
 
+                    <p>
+                        These projects are automatically loaded from my
+                        GitHub repositories.
+                    </p>
 
-    <!-- ================= EXPERIENCE ================= -->
+                </div>
 
-    <section class="section dark-section" id="experience">
+                <div
+                    id="github-projects"
+                    class="projects-grid"
+                >
 
-        <div class="section-container">
+                    <div class="github-loading">
 
-            <div class="section-heading">
-
-                <span>04</span>
-
-                <h2>Experience</h2>
-
-            </div>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-content">
-
-                        <span class="timeline-date">
-                            July 27 – August 7, 2025
-                        </span>
-
-                        <h3>
-                            GUPCO Internship
-                        </h3>
-
-                        <h4>
-                            IT / Telecommunication Department
-                        </h4>
+                        <i class="fas fa-spinner fa-spin"></i>
 
                         <p>
-                            Completed an internship where I gained
-                            practical exposure to different IT
-                            departments and their responsibilities.
-                        </p>
-
-                        <p>
-                            Learned about security, software
-                            development, communication, DevOps,
-                            networking, and IT team workflows.
+                            Loading GitHub projects...
                         </p>
 
                     </div>
@@ -583,31 +403,105 @@
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- ================= EDUCATION ================= -->
+        <!-- ==================== EXPERIENCE ==================== -->
 
-    <section class="section" id="education">
+        <section
+            id="experience"
+            class="section section-dark"
+        >
 
-        <div class="section-container">
+            <div class="container">
 
-            <div class="section-heading">
+                <div class="section-title">
 
-                <span>05</span>
+                    <span>04</span>
 
-                <h2>Education</h2>
+                    <h2>Experience</h2>
+
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+
+                            <span class="timeline-date">
+                                July 27 – August 7, 2025
+                            </span>
+
+                            <h3>
+                                IT / Telecommunication Intern
+                            </h3>
+
+                            <h4>
+                                Gulf of Suez Petroleum Company (GUPCO)
+                            </h4>
+
+                            <p>
+                                Completed an internship in the IT /
+                                Telecommunication Department and gained
+                                exposure to different IT teams and their
+                                responsibilities.
+                            </p>
+
+                            <ul>
+
+                                <li>
+                                    Learned about IT security.
+                                </li>
+
+                                <li>
+                                    Explored software and development teams.
+                                </li>
+
+                                <li>
+                                    Learned about DevOps and networking.
+                                </li>
+
+                                <li>
+                                    Improved technical communication and
+                                    understanding of IT departments.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="education-grid">
+        </section>
+
+
+        <!-- ==================== EDUCATION ==================== -->
+
+        <section id="education" class="section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>05</span>
+
+                    <h2>Education</h2>
+
+                </div>
 
                 <div class="education-card">
 
                     <div class="education-icon">
+
                         <i class="fas fa-graduation-cap"></i>
+
                     </div>
 
                     <div>
@@ -616,9 +510,9 @@
                             MSA University
                         </h3>
 
-                        <p>
+                        <h4>
                             Faculty of Computer Science
-                        </p>
+                        </h4>
 
                         <p>
                             Software Engineering
@@ -636,7 +530,9 @@
                 <div class="education-card">
 
                     <div class="education-icon">
+
                         <i class="fas fa-university"></i>
+
                     </div>
 
                     <div>
@@ -646,8 +542,7 @@
                         </h3>
 
                         <p>
-                            University Partnership with
-                            MSA University
+                            Academic partnership with MSA University
                         </p>
 
                         <span>
@@ -660,182 +555,192 @@
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- ================= CERTIFICATES ================= -->
+        <!-- ==================== CERTIFICATES ==================== -->
 
-    <section class="section dark-section" id="certificates">
+        <section
+            id="certificates"
+            class="section section-dark"
+        >
 
-        <div class="section-container">
+            <div class="container">
 
-            <div class="section-heading">
+                <div class="section-title">
 
-                <span>06</span>
+                    <span>06</span>
 
-                <h2>Certificates</h2>
+                    <h2>Certificates</h2>
+
+                </div>
+
+                <div class="certificates-grid">
+
+                    <div class="certificate-card">
+
+                        <i class="fas fa-certificate"></i>
+
+                        <h3>
+                            GUPCO Internship Certificate
+                        </h3>
+
+                        <p>
+                            IT / Telecommunication Department
+                        </p>
+
+                    </div>
+
+                    <div class="certificate-card">
+
+                        <i class="fas fa-award"></i>
+
+                        <h3>
+                            Huawei Certificate
+                        </h3>
+
+                        <p>
+                            Technical Training Certificate
+                        </p>
+
+                    </div>
+
+                    <div class="certificate-card">
+
+                        <i class="fas fa-code"></i>
+
+                        <h3>
+                            C# Course
+                        </h3>
+
+                        <p>
+                            YAT Learning Centers
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
-            <div class="certificate-grid">
+        </section>
 
-                <div class="certificate-card">
 
-                    <i class="fas fa-certificate"></i>
+        <!-- ==================== CONTACT ==================== -->
 
-                    <h3>
-                        GUPCO Internship Certificate
-                    </h3>
+        <section id="contact" class="section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>07</span>
+
+                    <h2>Contact Me</h2>
+
+                </div>
+
+                <div class="contact-content">
 
                     <p>
-                        IT / Telecommunication Department
+                        I'm currently interested in software engineering
+                        internships and opportunities where I can continue
+                        developing my technical skills.
                     </p>
 
-                </div>
+
+                    <div class="contact-grid">
+
+                        <a
+                            href="mailto:ahmad.ihab@msa.edu.eg"
+                            class="contact-card"
+                        >
+
+                            <i class="fas fa-envelope"></i>
+
+                            <div>
+
+                                <span>Email</span>
+
+                                <strong>
+                                    ahmad.ihab@msa.edu.eg
+                                </strong>
+
+                            </div>
+
+                        </a>
 
 
-                <div class="certificate-card">
+                        <a
+                            href="https://www.linkedin.com/in/ahmad-ihab-fouad-abdullrahman-soliman-bb9261372"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-card"
+                        >
 
-                    <i class="fas fa-award"></i>
+                            <i class="fab fa-linkedin"></i>
 
-                    <h3>
-                        Huawei Certificate
-                    </h3>
+                            <div>
 
-                    <p>
-                        Technical Training
-                    </p>
+                                <span>LinkedIn</span>
 
-                </div>
+                                <strong>
+                                    Ahmad Ihab Fouad
+                                </strong>
+
+                            </div>
+
+                        </a>
 
 
-                <div class="certificate-card">
+                        <a
+                            href="https://github.com/ahmedihab001"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-card"
+                        >
 
-                    <i class="fas fa-code"></i>
+                            <i class="fab fa-github"></i>
 
-                    <h3>
-                        C# Course
-                    </h3>
+                            <div>
 
-                    <p>
-                        YAT Learning Centers
-                    </p>
+                                <span>GitHub</span>
+
+                                <strong>
+                                    ahmedihab001
+                                </strong>
+
+                            </div>
+
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section class="section" id="contact">
-
-        <div class="section-container">
-
-            <div class="section-heading">
-
-                <span>07</span>
-
-                <h2>Contact Me</h2>
-
-            </div>
-
-            <div class="contact-content">
-
-                <p>
-                    I'm open to internship opportunities,
-                    software development projects, and
-                    opportunities to gain practical experience.
-                </p>
-
-                <div class="contact-buttons">
-
-                    <a href="mailto:ahmad.ihab@msa.edu.eg"
-                       class="btn primary-btn">
-
-                        <i class="fas fa-envelope"></i>
-                        Email Me
-
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/ahmad-ihab-fouad-abdullrahman-soliman-bb9261372"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="btn secondary-btn">
-
-                        <i class="fab fa-linkedin"></i>
-                        LinkedIn
-
-                    </a>
-
-                    <a href="https://github.com/ahmedihab001"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="btn secondary-btn">
-
-                        <i class="fab fa-github"></i>
-                        GitHub
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+    </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- ==================== FOOTER ==================== -->
 
     <footer class="footer">
 
-        <div class="footer-content">
+        <div class="container">
 
             <p>
                 © <span id="current-year"></span>
-                Ahmad Ihab Fouad. All Rights Reserved.
+                Ahmad Ihab Fouad. All rights reserved.
             </p>
-
-            <div class="footer-social">
-
-                <a href="https://github.com/ahmedihab001"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <i class="fab fa-github"></i>
-
-                </a>
-
-                <a href="https://www.linkedin.com/in/ahmad-ihab-fouad-abdullrahman-soliman-bb9261372"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <i class="fab fa-linkedin"></i>
-
-                </a>
-
-                <a href="mailto:ahmad.ihab@msa.edu.eg">
-
-                    <i class="fas fa-envelope"></i>
-
-                </a>
-
-            </div>
 
         </div>
 
     </footer>
 
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
