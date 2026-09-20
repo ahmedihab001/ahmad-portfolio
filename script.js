@@ -1,44 +1,53 @@
-// ================= MOBILE MENU =================
+// =========================
+// MOBILE MENU
+// =========================
 
-const menuBtn = document.getElementById("menu-btn");
-const navMenu = document.getElementById("nav-menu");
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
 
-menuBtn.addEventListener("click", function () {
+if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+}
 
-    navMenu.classList.toggle("active");
 
-});
+// =========================
+// CLOSE MOBILE MENU
+// =========================
 
+const navigationLinks = document.querySelectorAll(".nav-links a");
 
-// Close mobile menu when clicking a link
-
-const navLinks = document.querySelectorAll("nav a");
-
-navLinks.forEach(function (link) {
+navigationLinks.forEach(function (link) {
 
     link.addEventListener("click", function () {
 
-        navMenu.classList.remove("active");
+        navLinks.classList.remove("active");
 
     });
 
 });
 
 
-// ================= CURRENT YEAR =================
+// =========================
+// CURRENT YEAR
+// =========================
 
-const year = document.getElementById("year");
+const currentYear = document.getElementById("current-year");
 
-year.textContent = new Date().getFullYear();
+if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+}
 
 
-// ================= SIMPLE SCROLL ANIMATION =================
+// =========================
+// SCROLL ANIMATION
+// =========================
 
 const animatedElements =
     document.querySelectorAll(
-        ".project-card, .skill-card, .info-box, .education-card, .certificate-card"
+        ".project-card, .skill-card, .education-card, .certificate-card, .timeline-item"
     );
-
 
 const observer = new IntersectionObserver(
     function (entries) {
@@ -48,9 +57,7 @@ const observer = new IntersectionObserver(
             if (entry.isIntersecting) {
 
                 entry.target.style.opacity = "1";
-
-                entry.target.style.transform =
-                    "translateY(0)";
+                entry.target.style.transform = "translateY(0)";
 
             }
 
@@ -58,12 +65,16 @@ const observer = new IntersectionObserver(
 
     },
     {
-        threshold: 0.15
+        threshold: 0.1
     }
 );
 
 
 animatedElements.forEach(function (element) {
+
+    element.style.opacity = "0";
+    element.style.transform = "translateY(20px)";
+    element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
 
     observer.observe(element);
 
