@@ -127,14 +127,9 @@ async function loadGitHubProjects() {
          */
 
         const manuallyListedProjects = [
-
-            "compound-security-system",
-
-            "dental-fluorosis-prediction-system",
-
-            "cipher-wheel-decoder"
-
-        ];
+    "compound-security-system",
+    "dental-fluorosis-prediction-system"
+    ];
 
 
 
