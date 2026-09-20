@@ -6,47 +6,29 @@ const menuToggle =
 const navMenu =
     document.getElementById("nav-menu");
 
-
 if (menuToggle && navMenu) {
 
-    menuToggle.addEventListener(
-        "click",
-        () => {
-
-            navMenu.classList.toggle("active");
-
-        }
-    );
-
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
 
     const navLinks =
         navMenu.querySelectorAll("a");
 
-
     navLinks.forEach(link => {
 
-        link.addEventListener(
-            "click",
-            () => {
-
-                navMenu.classList.remove(
-                    "active"
-                );
-
-            }
-        );
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+        });
 
     });
-
 }
-
 
 
 /* ==================== CURRENT YEAR ==================== */
 
 const currentYear =
     document.getElementById("current-year");
-
 
 if (currentYear) {
 
@@ -56,42 +38,23 @@ if (currentYear) {
 }
 
 
-
 /* ==================== GITHUB PROJECTS ==================== */
 
 async function loadGitHubProjects() {
 
-
-    /*
-     * Get the SAME projects grid
-     * that contains your manual projects.
-     */
-
     const projectsGrid =
-        document.getElementById(
-            "projects-grid"
-        );
-
+        document.getElementById("projects-grid");
 
     if (!projectsGrid) {
-
         return;
-
     }
 
-
     try {
-
-
-        /*
-         * Get Ahmad's public repositories.
-         */
 
         const response =
             await fetch(
                 "https://api.github.com/users/ahmedihab001/repos?sort=updated&per_page=100"
             );
-
 
         if (!response.ok) {
 
@@ -101,15 +64,31 @@ async function loadGitHubProjects() {
 
         }
 
-
         const repositories =
             await response.json();
 
 
+        /*
+        These projects already exist manually
+        in the portfolio.
+
+        They should NOT be added again
+        from GitHub.
+        */
+
+        const manuallyListedProjects = [
+
+            "compound-security-system",
+
+            "dental-fluorosis-prediction-system"
+
+        ];
+
 
         /*
-         * Ignore forked repositories.
-         */
+        Only use public repositories
+        that are not forks.
+        */
 
         const projects =
             repositories.filter(
@@ -117,41 +96,22 @@ async function loadGitHubProjects() {
             );
 
 
-
-        /*
-         * These repositories already have
-         * their own custom cards above.
-         *
-         * Therefore we don't create a second
-         * copy of them from GitHub.
-         */
-
-        const manuallyListedProjects = [
-    "compound-security-system",
-    "dental-fluorosis-prediction-system"
-    ];
-
-
-
-        /*
-         * Add GitHub repositories to the
-         * SAME projects grid.
-         */
-
         projects.forEach(repo => {
 
-
             /*
-             * Don't add a duplicate if the
-             * repository has the same name as
-             * one of the manual projects.
-             */
+            Get repository name
+            */
 
             const repositoryName =
                 repo.name
                     .toLowerCase()
-                    .replace(/\s+/g, "-");
+                    .trim();
 
+
+            /*
+            Don't duplicate manually
+            created project cards.
+            */
 
             if (
                 manuallyListedProjects.includes(
@@ -164,10 +124,34 @@ async function loadGitHubProjects() {
             }
 
 
+            /*
+            Default description.
+            */
+
+            let description =
+                repo.description ||
+                "A software project developed as part of my university and programming work.";
+
 
             /*
-             * Create the project card.
-             */
+            Custom description for
+            Cipher Wheel Decoder.
+            */
+
+            if (
+                repositoryName ===
+                "cipher-wheel-decoder"
+            ) {
+
+                description =
+                    "A C++ console application that implements a cipher wheel for encrypting and decrypting text using a user-selected code.";
+
+            }
+
+
+            /*
+            Create the project card.
+            */
 
             const projectCard =
                 document.createElement(
@@ -179,10 +163,11 @@ async function loadGitHubProjects() {
                 "project-card";
 
 
-
             /*
-             * Get programming language.
-             */
+            GitHub language.
+            For Cipher Wheel Decoder,
+            this should normally be C++.
+            */
 
             const language =
                 repo.language
@@ -194,20 +179,9 @@ async function loadGitHubProjects() {
                     : "";
 
 
-
             /*
-             * Get description.
-             */
-
-            const description =
-                repo.description ||
-                "No description available.";
-
-
-
-            /*
-             * Create GitHub project card.
-             */
+            Create the project card HTML.
+            */
 
             projectCard.innerHTML = `
 
@@ -219,12 +193,16 @@ async function loadGitHubProjects() {
 
 
                 <h3>
+
                     ${repo.name}
+
                 </h3>
 
 
                 <p>
+
                     ${description}
+
                 </p>
 
 
@@ -243,17 +221,24 @@ async function loadGitHubProjects() {
 
 
                     <span>
+
                         GitHub
+
                     </span>
 
                 </div>
 
 
                 <a
+
                     href="${repo.html_url}"
+
                     target="_blank"
+
                     rel="noopener noreferrer"
+
                     class="project-link"
+
                 >
 
                     <i class="fab fa-github"></i>
@@ -265,11 +250,10 @@ async function loadGitHubProjects() {
             `;
 
 
-
             /*
-             * Add the new card to the
-             * SAME Projects grid.
-             */
+            Add the GitHub project
+            to the SAME projects grid.
+            */
 
             projectsGrid.appendChild(
                 projectCard
@@ -280,45 +264,35 @@ async function loadGitHubProjects() {
 
     } catch (error) {
 
-
         console.error(
             "GitHub API Error:",
             error
         );
-
-
-        /*
-         * We don't show an error card
-         * to visitors if GitHub is
-         * temporarily unavailable.
-         *
-         * Your manually written projects
-         * will still remain visible.
-         */
 
     }
 
 }
 
 
-
 /*
- * Load GitHub projects.
- */
+Load GitHub projects
+when the page opens.
+*/
 
 loadGitHubProjects();
-
 
 
 /* ==================== SCROLL ANIMATION ==================== */
 
 const animatedElements =
     document.querySelectorAll(
+
         ".project-card, " +
         ".skill-card, " +
         ".education-card, " +
         ".certificate-card, " +
         ".contact-card"
+
     );
 
 
