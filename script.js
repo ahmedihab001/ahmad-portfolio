@@ -69,11 +69,8 @@ async function loadGitHubProjects() {
 
 
         /*
-        These projects already exist manually
-        in the portfolio.
-
-        They should NOT be added again
-        from GitHub.
+        These projects already exist
+        manually in the portfolio.
         */
 
         const manuallyListedProjects = [
@@ -86,7 +83,31 @@ async function loadGitHubProjects() {
 
 
         /*
-        Only use public repositories
+        Custom descriptions for GitHub projects.
+        */
+
+        const projectDescriptions = {
+
+            "cipher-wheel-decoder":
+                "A C++ console application that implements a cipher wheel for encrypting and decrypting text using a user-selected code.",
+
+
+            "pegasus-club":
+                "A full-stack web project developed to provide a digital platform for the Pegasus Club, combining frontend and backend functionality.",
+
+
+            "nexes-hotel-website":
+                "A university team project for a hotel and resort website with rooms, bookings, users, payments, administration, and location information.",
+
+
+            "ahmad-portfolio":
+                "My personal portfolio website showcasing my software engineering projects, skills, education, experience, and certificates."
+
+        };
+
+
+        /*
+        Only load public repositories
         that are not forks.
         */
 
@@ -98,10 +119,6 @@ async function loadGitHubProjects() {
 
         projects.forEach(repo => {
 
-            /*
-            Get repository name
-            */
-
             const repositoryName =
                 repo.name
                     .toLowerCase()
@@ -109,8 +126,8 @@ async function loadGitHubProjects() {
 
 
             /*
-            Don't duplicate manually
-            created project cards.
+            Don't add projects that
+            already exist manually.
             */
 
             if (
@@ -125,48 +142,22 @@ async function loadGitHubProjects() {
 
 
             /*
-            Default description.
+            Use custom description if we
+            have one. Otherwise use the
+            GitHub repository description.
             */
 
-            let description =
+            const description =
+                projectDescriptions[
+                    repositoryName
+                ] ||
                 repo.description ||
                 "A software project developed as part of my university and programming work.";
 
 
             /*
-            Custom description for
-            Cipher Wheel Decoder.
-            */
-
-            if (
-                repositoryName ===
-                "cipher-wheel-decoder"
-            ) {
-
-                description =
-                    "A C++ console application that implements a cipher wheel for encrypting and decrypting text using a user-selected code.";
-
-            }
-
-
-            /*
-            Create the project card.
-            */
-
-            const projectCard =
-                document.createElement(
-                    "article"
-                );
-
-
-            projectCard.className =
-                "project-card";
-
-
-            /*
-            GitHub language.
-            For Cipher Wheel Decoder,
-            this should normally be C++.
+            GitHub detects the main language
+            of each repository.
             */
 
             const language =
@@ -180,8 +171,18 @@ async function loadGitHubProjects() {
 
 
             /*
-            Create the project card HTML.
+            Create project card.
             */
+
+            const projectCard =
+                document.createElement(
+                    "article"
+                );
+
+
+            projectCard.className =
+                "project-card";
+
 
             projectCard.innerHTML = `
 
@@ -230,15 +231,10 @@ async function loadGitHubProjects() {
 
 
                 <a
-
                     href="${repo.html_url}"
-
                     target="_blank"
-
                     rel="noopener noreferrer"
-
                     class="project-link"
-
                 >
 
                     <i class="fab fa-github"></i>
@@ -251,8 +247,8 @@ async function loadGitHubProjects() {
 
 
             /*
-            Add the GitHub project
-            to the SAME projects grid.
+            Add the project to the
+            SAME Projects grid.
             */
 
             projectsGrid.appendChild(
@@ -275,8 +271,7 @@ async function loadGitHubProjects() {
 
 
 /*
-Load GitHub projects
-when the page opens.
+Load GitHub projects.
 */
 
 loadGitHubProjects();
