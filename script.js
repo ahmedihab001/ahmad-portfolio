@@ -68,48 +68,40 @@ async function loadGitHubProjects() {
             await response.json();
 
 
-        /*
-        These projects already exist
-        manually in the portfolio.
-        */
+        /* ==================== MANUAL PROJECTS ==================== */
 
         const manuallyListedProjects = [
 
-            "compound-security-system",
+            "compoundsecuritysystem",
 
-            "dental-fluorosis-prediction-system"
+            "dentalfluorosispredictionsystem"
 
         ];
 
 
-        /*
-        Custom descriptions for GitHub projects.
-        */
+        /* ==================== PROJECT DESCRIPTIONS ==================== */
 
         const projectDescriptions = {
 
-            "cipher-wheel-decoder":
+            "cipherwheeldecoder":
                 "A C++ console application that implements a cipher wheel for encrypting and decrypting text using a user-selected code.",
 
 
-            "pegasus-club":
-                "A full-stack web project developed to provide a digital platform for the Pegasus Club, combining frontend and backend functionality.",
+            "pegasusclub":
+                "A web development project for the Pegasus Club, combining frontend and backend functionality to create a digital club platform.",
 
 
-            "nexes-hotel-website":
-                "A university team project for a hotel and resort website with rooms, bookings, users, payments, administration, and location information.",
+            "nexeshotelwebsite":
+                "A university team project for a hotel and resort website featuring rooms, bookings, users, payments, administration, and location information.",
 
 
-            "ahmad-portfolio":
-                "My personal portfolio website showcasing my software engineering projects, skills, education, experience, and certificates."
+            "ahmadportfolio":
+                "My personal portfolio website showcasing my software engineering projects, technical skills, education, experience, and certificates."
 
         };
 
 
-        /*
-        Only load public repositories
-        that are not forks.
-        */
+        /* ==================== LOAD REPOSITORIES ==================== */
 
         const projects =
             repositories.filter(
@@ -119,15 +111,30 @@ async function loadGitHubProjects() {
 
         projects.forEach(repo => {
 
+            /*
+            Normalize the repository name.
+
+            Example:
+
+            cipher-wheel-decoder
+            cipher_wheel_decoder
+            Cipher Wheel Decoder
+
+            all become:
+
+            cipherwheeldecoder
+            */
+
             const repositoryName =
                 repo.name
                     .toLowerCase()
+                    .replace(/[-_\s]/g, "")
                     .trim();
 
 
             /*
-            Don't add projects that
-            already exist manually.
+            Don't duplicate manually created
+            portfolio projects.
             */
 
             if (
@@ -142,9 +149,7 @@ async function loadGitHubProjects() {
 
 
             /*
-            Use custom description if we
-            have one. Otherwise use the
-            GitHub repository description.
+            Get custom description.
             */
 
             const description =
@@ -156,8 +161,7 @@ async function loadGitHubProjects() {
 
 
             /*
-            GitHub detects the main language
-            of each repository.
+            Get GitHub's detected language.
             */
 
             const language =
@@ -170,15 +174,12 @@ async function loadGitHubProjects() {
                     : "";
 
 
-            /*
-            Create project card.
-            */
+            /* ==================== CREATE CARD ==================== */
 
             const projectCard =
                 document.createElement(
                     "article"
                 );
-
 
             projectCard.className =
                 "project-card";
@@ -211,7 +212,6 @@ async function loadGitHubProjects() {
 
                     ${language}
 
-
                     <span>
 
                         <i class="fas fa-star"></i>
@@ -219,7 +219,6 @@ async function loadGitHubProjects() {
                         ${repo.stargazers_count}
 
                     </span>
-
 
                     <span>
 
@@ -246,11 +245,6 @@ async function loadGitHubProjects() {
             `;
 
 
-            /*
-            Add the project to the
-            SAME Projects grid.
-            */
-
             projectsGrid.appendChild(
                 projectCard
             );
@@ -270,9 +264,7 @@ async function loadGitHubProjects() {
 }
 
 
-/*
-Load GitHub projects.
-*/
+/* ==================== LOAD GITHUB PROJECTS ==================== */
 
 loadGitHubProjects();
 
@@ -306,7 +298,6 @@ const observer =
                         entry.target.style.opacity =
                             "1";
 
-
                         entry.target.style.transform =
                             "translateY(0)";
 
@@ -330,14 +321,11 @@ animatedElements.forEach(
         element.style.opacity =
             "0";
 
-
         element.style.transform =
             "translateY(20px)";
 
-
         element.style.transition =
             "opacity 0.6s ease, transform 0.6s ease";
-
 
         observer.observe(
             element
